@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Sandrita!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans flex items-center justify-center min-h-screen text-white overflow-hidden p-4">
+
+    <div id="confetti-container" class="fixed inset-0 overflow-hidden z-50 pointer-events-none"></div>
+
+    <div id="app-container" class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-3xl shadow-xl p-6 sm:p-8 md:p-10 max-w-sm w-full text-center flex flex-col items-center justify-center border border-white border-opacity-30">
+
+        <div id="entry-page" class="flex flex-col items-center justify-center w-full">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-8 drop-shadow-lg leading-tight">
+                ¡Felices 21!
+            </h1>
+            <h2>
+                Antes de darte los regalos tienes que pasar por una pequeña prueba para ver si eres merecedora de ellos, jeje
+            </h2>
+            <img src="21.png" alt="Imagen del Cumpleaños 21" class="w-48 h-48 mb-8 shadow-lg border-4 border-white transform hover:scale-105 transition-transform duration-300 ease-in-out" onerror="this.onerror=null;this.src='placeholder_birthday.png';">
+            <button id="enter-button" class="bg-white text-purple-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-300">
+                Entrar
+            </button>
+        </div>
+
+        <div id="connection-page" class="hidden flex-col items-center justify-center w-full">
+            <h2 id="connection-title" class="text-3xl sm:text-4xl font-bold mb-6"></h2>
+            <img id="connection-image" src="" alt="Connection Image" class="w-48 h-48 mb-8 shadow-lg border-4 border-white transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <button id="next-question-button" class="bg-white text-purple-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-300">
+                Siguiente Pregunta
+            </button>
+        </div>
+        <div id="question-page" class="hidden flex-col items-center justify-center w-full">
+            <p id="question-text" class="text-2xl sm:text-3xl font-semibold mb-6 leading-relaxed"></p>
+            <input type="text" id="answer-input" placeholder="Escribe tu respuesta aquí..." class="w-full px-5 py-3 rounded-xl bg-white bg-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:bg-opacity-40 mb-4 text-lg text-center shadow-inner transition-all duration-200">
+            <button id="submit-button" class="bg-white text-purple-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus->ring-purple-300">
+                Enviar Respuesta
+            </button>
+            <p id="feedback-message" class="mt-4 text-xl font-medium hidden"></p>
+        </div>
+
+        <div id="final-page" class="hidden flex-col items-center justify-center w-full">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">¡Muy bien hecho!</h2>
+            <p class="text-xl sm:text-2xl leading-relaxed">¡Espero que te haya gustado! ¡Te quiero muschísimo! ¡Feliz Cumpleaños!</p>
+            <p class="mt-4 text-lg">❤️‍🩹</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

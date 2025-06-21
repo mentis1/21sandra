@@ -1,0 +1,251 @@
+/* --- GLOBAL STYLES & TYPOGRAPHY --- */
+/* Basic reset for minimalist appeal */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Clean, modern font */
+    background-color: #711124; /* Light gray background */
+    color: #711124; /* Dark gray text for high contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 1rem; /* Overall padding for small screens */
+}
+
+/* Base text sizes (can be overridden by Tailwind classes if preferred) */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+.text-6xl { font-size: 3.75rem; }
+.text-7xl { font-size: 4.5rem; }
+.text-8xl { font-size: 6rem; }
+.text-9xl { font-size: 8rem; }
+
+/* --- APP CONTAINER --- */
+#app-container {
+    background-color: #ffffff; /* Pure white background for the card */
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Soft, subtle shadow */
+    padding: 2.5rem; /* More generous padding */
+    max-width: 400px; /* Slightly wider for better mobile feel */
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none; /* Remove any previous borders */
+    transition: transform 0.3s ease-in-out; /* Smooth scale on hover/active */
+}
+
+#app-container:hover {
+    transform: translateY(-5px); /* Lift slightly on hover */
+}
+
+/* --- ENTRY PAGE --- */
+#entry-page h1 {
+    font-size: 2.5rem; /* Slightly smaller, elegant title */
+    font-weight: 700;
+    color: #2c3e50; /* Darker, sophisticated blue-gray */
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    text-shadow: none; /* Remove text shadow */
+}
+
+#entry-page h2 {
+    /* Ensure this h2 is also visible. Override body's text-white. */
+    color: #333333; /* Dark gray for visibility */
+}
+
+@media (min-width: 640px) { /* Adjust for larger screens */
+    #entry-page h1 {
+        font-size: 3rem;
+    }
+}
+
+#entry-page img {
+    width: 200px; /* Aumentado el tamaño */
+    height: 200px; /* Aumentado el tamaño */
+    border-radius: 0; /* Asegura que no sea circular, eliminando cualquier borde circular residual */
+    object-fit: cover; /* La imagen llenará el espacio, recortando si es necesario */
+    display: block; /* Para poder centrar con margen automático */
+    margin: 0 auto 2rem auto; /* Centrar la imagen y margen inferior */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para la imagen */
+    border: 3px solid #e0e0e0; /* Borde gris claro */
+    transition: transform 0.3s ease-in-out;
+}
+
+#entry-page img:hover {
+    transform: scale(1.03);
+}
+
+/* --- BUTTONS --- */
+button {
+    background-color: #007bff; /* Primary blue accent */
+    color: #ffffff; /* White text */
+    font-weight: 600; /* Semi-bold */
+    padding: 0.9rem 2.2rem; /* Comfortable padding */
+    border-radius: 8px; /* Slightly less rounded */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Soft shadow for blue button */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.02em; /* Less prominent letter spacing */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Focus ring */
+}
+
+/* --- CONNECTION PAGE --- */
+#connection-page h2 {
+    font-size: 2.2rem; /* Adjusted font size for connection title */
+    font-weight: 700;
+    color: #333333; /* Dark gray for visibility on connection page */
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: none;
+}
+
+#connection-page img { /* Added styling for connection images */
+    width: 200px; /* Aumentado el tamaño */
+    height: 200px; /* Aumentado el tamaño */
+    border-radius: 0; /* Asegura que no sea circular */
+    object-fit: cover; /* La imagen llenará el espacio, recortando si es necesario */
+    display: block; /* Para poder centrar con margen automático */
+    margin: 0 auto 2rem auto; /* Centrar la imagen y margen inferior */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #e0e0e0;
+    transition: transform 0.3s ease-in-out;
+}
+
+#connection-page img:hover {
+    transform: scale(1.03);
+}
+
+
+/* --- QUESTION & ANSWER PAGE --- */
+#question-page p#question-text {
+    font-size: 1.6rem; /* Clear question text */
+    font-weight: 500; /* Medium weight */
+    color: #333333;
+    margin-bottom: 1.8rem;
+    line-height: 1.4;
+}
+
+#question-page h2 { /* Targeting the new h2 specifically on question page if you add it here */
+    font-size: 1.8rem;
+    color: #28a745; /* Changed to green */
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+#answer-input {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #cccccc; /* Light gray border */
+    background-color: #fcfcfc; /* Slightly off-white background */
+    color: #333333;
+    font-size: 1.1rem;
+    text-align: center;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); /* Subtle inner shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#answer-input::placeholder {
+    color: #aaaaaa; /* Lighter placeholder text */
+    opacity: 1; /* Ensures full visibility */
+}
+
+#answer-input:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Soft blue glow on focus */
+    background-color: #ffffff;
+}
+
+/* Feedback messages */
+#feedback-message {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+#feedback-message.text-green-500 {
+    color: #28a745; /* Success green */
+}
+
+#feedback-message.text-red-500 {
+    color: #dc3545; /* Error red */
+}
+
+/* Border colors for input feedback */
+#answer-input.border-red-500 {
+    border-color: #dc3545;
+}
+
+#answer-input.border-green-500 {
+    border-color: #28a745;
+}
+
+/* --- FINAL PAGE --- */
+#final-page h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-shadow: none;
+}
+
+#final-page p {
+    font-size: 1.3rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+#final-page p:last-child { /* Heart emoji */
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    color: #ff6b6b; /* A touch of red for the heart, if desired, otherwise #555 */
+}
+
+/* --- CONFETTI ANIMATION --- */
+@keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotateZ(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotateZ(720deg); opacity: 0; }
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 15px; /* Aumentado el tamaño del confeti */
+    height: 15px; /* Aumentado el tamaño del confeti */
+    background-color: #007bff; /* Default confetti color (will be overridden by JS) */
+    opacity: 0;
+    animation: confetti-fall linear forwards;
+    pointer-events: none;
+    border-radius: 50%;
+}
