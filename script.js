@@ -142,7 +142,7 @@ submitButton.addEventListener('click', () => {
             currentQuestionIndex++; // Increment index for the next question
             confettiContainer.innerHTML = ''; // Clear confetti
             displayConnectionPage(); // Show the connection page
-        }, 3000); // 3 seconds delay for confetti and then show connection page
+        }, 3000); // 1 seconds delay for confetti and then show connection page
     } else {
         feedbackMessage.textContent = "¡Fallaste!"; // Mensaje simplificado
         feedbackMessage.classList.remove('text-green-500');
