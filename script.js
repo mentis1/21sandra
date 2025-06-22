@@ -37,7 +37,7 @@ const questions = [
         question: "Fecha de la primera carta",
         answer: "14/02/2020",
         connectionTitle: "La primera de muchas",
-        connectionImage: "carta.jpeg" // Your local image filename
+        connectionImage: "carta.JPEG" // Your local image filename
     },
     {
         question: "¿Cuál es la canción que tengo en el llavero que me regalaste?",
