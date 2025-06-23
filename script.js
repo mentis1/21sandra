@@ -48,8 +48,8 @@ const questions = [
     {
         question: "¿A qué restaurante fuimos en nuestra primera cita?",
         answer: "Massart",
-        connectionTitle: "¡Nuestra canción!",
-        connectionImage: "massart.jpg" // Your local image filename
+        connectionTitle: "Bien bien...",
+        connectionImage: "massart.JPEG" // Your local image filename
     },
 ];
 
@@ -74,14 +74,23 @@ function displayQuestion() {
 
 // Function to display the connection page
 function displayConnectionPage() {
-    if (currentQuestionIndex < questions.length) { // Check if there's a next question to connect to
-        const currentConnectionData = questions[currentQuestionIndex -1]; // Get data from the *just answered* question
+    // If currentQuestionIndex is 0, it means no question has been answered yet,
+    // so we shouldn't try to show a connection page.
+    // If currentQuestionIndex is equal to questions.length, it means the last question was just answered.
+    // In this case, we still want to show the connection for the last question.
+    if (currentQuestionIndex > 0 && currentQuestionIndex <= questions.length) {
+        // Retrieve data for the question that was *just* answered.
+        // Since currentQuestionIndex was incremented, we need to go back one.
+        const currentConnectionData = questions[currentQuestionIndex - 1];
         connectionTitle.textContent = currentConnectionData.connectionTitle;
         connectionImage.src = currentConnectionData.connectionImage;
         questionPage.classList.add('hidden');
         connectionPage.classList.remove('hidden');
     } else {
-        // If all questions are done, go straight to final page after confetti
+        // This 'else' block will now correctly handle the scenario where
+        // currentQuestionIndex becomes questions.length + 1 after the *last*
+        // connection page has been displayed and nextQuestionButton is clicked,
+        // or if there are no questions at all.
         questionPage.classList.add('hidden');
         connectionPage.classList.add('hidden');
         finalPage.classList.remove('hidden');
@@ -142,7 +151,7 @@ submitButton.addEventListener('click', () => {
             currentQuestionIndex++; // Increment index for the next question
             confettiContainer.innerHTML = ''; // Clear confetti
             displayConnectionPage(); // Show the connection page
-        }, 3000); // 1 seconds delay for confetti and then show connection page
+        }, 3000); // 3 seconds delay for confetti and then show connection page
     } else {
         feedbackMessage.textContent = "¡Fallaste!"; // Mensaje simplificado
         feedbackMessage.classList.remove('text-green-500');
